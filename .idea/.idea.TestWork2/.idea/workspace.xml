@@ -6,39 +6,14 @@
     <projectFile profileName="https">TestWork2/TestWork2.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db52e622-068d-4a5e-a621-afc78cae7da1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.TestWork2/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.TestWork2/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.TestWork2/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.TestWork2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/TestWork2/FileContentIndex/8f2a694e-25e1-4afe-ab66-112fd3fa4c10.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/TestWork2/FileContentIndex/9eaef96b-3d78-4661-82dc-bab40e996ae0.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/TestWork2/FileContentIndex/ade2892d-6da4-44e3-a969-f7937485b8fe.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/TestWork2/FileContentIndex/f774c87b-77e0-4840-b1c1-23ec4be57cb4.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestWork2.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestWork2.sln.DotSettings.user" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestWork2/Configurations/ValidatorConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestWork2/Data/AppDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestWork2/Data/Migrations/20221223035049_Init.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestWork2/Data/Migrations/20221223035049_Init.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestWork2/Data/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestWork2/Data/Models/FileResult.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestWork2/Data/Validators/FileValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestWork2/Data/Validators/FileValueValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestWork2/Extensions/MedianExtension.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestWork2/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestWork2/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestWork2/TestWork2 - Backup.csproj.user" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestWork2/TestWork2.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestWork2/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TestWork2/appsettings.json" afterDir="false" />
-    </list>
+    <list default="true" id="db52e622-068d-4a5e-a621-afc78cae7da1" name="Changes" comment="Update .gitignore" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RESET_MODE" value="SOFT" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/.nuget/packages/microsoft.net.test.sdk/17.4.1/build/netcoreapp3.1/Microsoft.NET.Test.Sdk.Program.cs" root0="SKIP_HIGHLIGHTING" />
@@ -52,6 +27,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -145,12 +121,29 @@
       <workItem from="1671760221359" duration="4359000" />
       <workItem from="1671764656756" duration="8137000" />
       <workItem from="1671773833116" duration="846000" />
+      <workItem from="1671775180561" duration="338000" />
     </task>
+    <task id="LOCAL-00001" summary="Init">
+      <created>1671775243829</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1671775243829</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Update .gitignore">
+      <created>1671775511110</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671775511110</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -166,6 +159,9 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Init" />
+    <MESSAGE value="Update .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update .gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
