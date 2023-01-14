@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using TestWork2.Configurations;
 using TestWork2.Data;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMvc();
 builder.Services.AddAppValidators();
@@ -15,7 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCoreAdmin();
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
@@ -25,8 +25,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseRouting();
+app.UseDefaultFiles();
 app.UseStaticFiles();
 app.UseHttpsRedirection();
+app.UseDeveloperExceptionPage();
 
 app.UseAdvancedDependencyInjection();
 
