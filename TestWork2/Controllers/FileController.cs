@@ -56,7 +56,7 @@ public class FileController : ControllerBase
         var fileValues = rows.AsParallel().Select(row =>
         {
             var rawFileValue = row.Split(';');
-            if (rawFileValue.Length != 3) 
+            if (rawFileValue.Length != 3)
                 return null;
             try
             {
@@ -81,7 +81,7 @@ public class FileController : ControllerBase
 
         if (fileValues.Count == 0)
             return BadRequest(new { error = "Bad data in file" });
-        
+
         var minDateTime = fileValues.Min(value => value.DateTime);
         var fileResult = new FileResult()
         {
@@ -96,7 +96,7 @@ public class FileController : ControllerBase
             File = fileModel
         };
 
-        await _db.FileValues.AddRangeAsync(fileValues); 
+        await _db.FileValues.AddRangeAsync(fileValues);
         await _db.FileResults.AddAsync(fileResult);
         await _db.SaveChangesAsync();
 
@@ -129,7 +129,7 @@ public class FileController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult GetFilesResults([FromQuery] string[]? names, [FromQuery] DateTime? fromDateTime,
+    public async Task<IActionResult> GetFilesResults([FromQuery] string[]? names, [FromQuery] DateTime? fromDateTime,
         [FromQuery] DateTime? toDateTime, [FromQuery] double? toAverageSeconds,
         [FromQuery] double? toAverageIndicator, [FromQuery] double? fromAverageSeconds = 0,
         [FromQuery] double? fromAverageIndicator = 0)
@@ -142,30 +142,30 @@ public class FileController : ControllerBase
             .Where(fileResult => fileResult.AverageIndicator >= fromAverageIndicator)
             .Where(fileResult => fileResult.AverageSeconds >= fromAverageSeconds)
             .Where(fileResult => fileResult.MinDateTime <= toDateTime);
-        foreach (var name in names)
-            query = query.Where(fileResult => fileResult.File.Name.Contains(name.ToLower()));
+        query = names.Aggregate(query,
+            (current, name) => current.Where(fileResult => fileResult.File.Name.Contains(name.ToLower())));
         if (toAverageIndicator != null)
             query = query.Where(fileResult => fileResult.AverageIndicator <= toAverageIndicator);
         if (toAverageSeconds != null)
             query = query.Where(fileResult => fileResult.AverageSeconds <= toAverageSeconds);
         if (fromDateTime != null)
             query = query.Where(fileResult => fileResult.MinDateTime >= fromDateTime);
-        
-        return Ok(query.ToList());
+
+        return Ok(await query.ToListAsync());
     }
 
     [HttpGet("values")]
-    public IActionResult GetFilesValues([FromQuery] string[]? names)
+    public async Task<IActionResult> GetFilesValues([FromQuery] string[]? names)
     {
         var query = _db.FileValues.AsNoTracking();
 
-        if (names.Length == 0)
-            return Ok(query.ToList());
+        if (names is { Length: 0 })
+            return Ok(await query.ToListAsync());
 
         query = query.Include(fileValue => fileValue.File);
-        foreach (var name in names)
-            query = query.Where(fileValue => fileValue.File.Name.Contains(name.ToLower()));
+        query = names.Aggregate(query,
+            (current, name) => current.Where(fileValue => fileValue.File.Name.Contains(name.ToLower())));
 
-        return Ok(query.ToList());
+        return Ok(await query.ToListAsync());
     }
 }
